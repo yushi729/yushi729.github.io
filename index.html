@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的拼豆小世界</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:"微软雅黑",sans-serif;background:#fef8ff;color:#333;}
+        header{text-align:center;padding:40px 20px;background:#fff0f6;}
+        h1{font-size:2.5rem;color:#d63384;margin-bottom:10px;}
+        p{font-size:1.1rem;color:#666;}
+        .gallery{max-width:1200px;margin:40px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;}
+        .card{background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.05);overflow:hidden;transition:transform 0.2s;}
+        .card:hover{transform:translateY(-5px);}
+        .card img{width:100%;height:250px;object-fit:cover;cursor:pointer;}
+        .info{padding:15px;}
+        .info h3{font-size:1.2rem;margin-bottom:5px;color:#d63384;}
+        .info p{font-size:0.9rem;color:#777;}
+        .about{max-width:800px;margin:60px auto;padding:0 20px;}
+        footer{text-align:center;padding:30px;background:#fff0f6;margin-top:60px;}
+        /* 点击放大效果 */
+        .lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;justify-content:center;align-items:center;z-index:1000;}
+        .lightbox img{max-width:90%;max-height:90%;border-radius:8px;}
+        .close{position:absolute;top:20px;right:30px;font-size:2rem;color:#fff;cursor:pointer;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>XXX的拼豆小世界</h1>
+        <p>把喜欢的像素，变成摸得到的温柔 ✨</p>
+    </header>
+
+    <section class="gallery">
+        <!-- 作品1：替换成你的图和信息 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x300/ffd6e0/333?text=拼豆作品1" alt="拼豆作品" onclick="openLightbox(this.src)">
+            <div class="info">
+                <h3>玉桂狗钥匙扣</h3>
+                <p>尺寸：12×12cm｜难度：⭐⭐</p>
+                <p>软乎乎的治愈系～</p>
+            </div>
+        </div>
+
+        <!-- 作品2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x300/e0f7ff/333?text=拼豆作品2" alt="拼豆作品" onclick="openLightbox(this.src)">
+            <div class="info">
+                <h3>皮卡丘摆件</h3>
+                <p>尺寸：18×18厘米｜难度：⭐⭐⭐</p>
+                <p>电量满格！</p>
+            </div>
+        </div>
+
+        <!-- 作品3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x300/f0ffe0/333?text=拼豆作品3" alt="拼豆作品" onclick="openLightbox(this.src)">
+            <div class="info">
+                <h3>草莓熊挂件</h3>
+                <p>尺寸：15×15cm｜难度：⭐⭐</p>
+                <p>甜甜的少女心～</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>关于我</h2>
+        <p>👋 你好！我是拼豆爱好者XXX，沉迷把可爱的像素图案变成现实～</p>
+        <p>入坑时间：2025年｜常用豆子：2.6mm小豆｜风格：可爱、卡通、治愈系</p>
+        <p>📌 作品均为手工制作，可交流，暂不接单～</p>
+    </section>
+
+    <footer>
+        <p>© 2026 XXX的拼豆小世界｜用热爱制作每一件作品</p>
+    </footer>
+
+    <!-- 点击放大 -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">×</span>
+        <img id="lightboxImg" src="" alt="大图">
+    </div>
+
+    <script>
+        function openLightbox(src){
+            document.getElementById("lightboxImg").src=src;
+            document.getElementById("lightbox").style.display="flex";
+        }
+        function closeLightbox(){
+            document.getElementById("lightbox").style.display="none";
+        }
+    </script>
+</body>
+</html>
